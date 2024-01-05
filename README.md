@@ -1,4 +1,4 @@
-# Nhom 65 - De tai: Xây dựng công cụ Fuzzig trên Docker
+# Nhom 65 - De tai: Xây dựng công cụ Fuzzing trên Docker
 ## Installation
 ```
 pip install -r requirement.txt
