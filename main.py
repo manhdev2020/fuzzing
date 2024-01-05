@@ -205,13 +205,14 @@ def nmap_scan_host(host_scan, portlist): # scan nmap
                 name = portScanner[host][protocol][port]['name']
                 print ('port : {}\tname : {}\tstate : {}'.format(port, name, state))
 
-        print('-'*35 + 'OS Description' +'-'*35)
-        print("Details about the scanned host are: \t", portScanner[host]['osmatch'][0]['osclass'][0]['cpe']) # In ra các thông tin về OS
-        print("Operating system family is: \t\t", portScanner[host]['osmatch'][0]['osclass'][0]['osfamily'])
-        print("Type of OS is: \t\t\t\t", portScanner[host]['osmatch'][0]['osclass'][0]['type']) 
-        print("Generation of Operating System :\t", portScanner[host]['osmatch'][0]['osclass'][0]['osgen'])
-        print("Operating System Vendor is:\t\t", portScanner[host]['osmatch'][0]['osclass'][0]['vendor'])
-        print("Accuracy of detection is:\t\t", portScanner[host]['osmatch'][0]['osclass'][0]['accuracy'])
+        if portScanner[host]['osmatch']:
+            print('-'*35 + 'OS Description' +'-'*35)
+            print("Details about the scanned host are: \t", portScanner[host]['osmatch'][0]['osclass'][0]['cpe']) # In ra các thông tin về OS
+            print("Operating system family is: \t\t", portScanner[host]['osmatch'][0]['osclass'][0]['osfamily'])
+            print("Type of OS is: \t\t\t\t", portScanner[host]['osmatch'][0]['osclass'][0]['type']) 
+            print("Generation of Operating System :\t", portScanner[host]['osmatch'][0]['osclass'][0]['osgen'])
+            print("Operating System Vendor is:\t\t", portScanner[host]['osmatch'][0]['osclass'][0]['vendor'])
+            print("Accuracy of detection is:\t\t", portScanner[host]['osmatch'][0]['osclass'][0]['accuracy'])
       
 
 def main():
