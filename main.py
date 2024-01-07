@@ -164,7 +164,7 @@ def brute_force_page(url, path, processes, mod): # thực hiện fuzzing directo
                 if mod == 'sqli': # nếu mode là sqli thì sẽ fuzz SQLi
                     check_sqli(data.text, urlx)
                 if mod == 'xss': # nếu mode là xss thì sẽ fuzz XSS
-                    check_xss(data.text, urlx)
+                    check_xss(data, urlx)
     print(Fore.GREEN+"*****Bruteforce directory done!*****")
 
 def google_dork(query, url):# google dork theo url

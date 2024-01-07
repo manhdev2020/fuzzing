@@ -1,4 +1,4 @@
-# Nhom 65 - De tai: Xây dựng công cụ Fuzzing trên Docker
+# Nhóm 65 - Đề tài: Xây dựng công cụ Fuzzing trên Docker
 ## Installation
 ```
 pip install -r requirement.txt
@@ -36,5 +36,6 @@ Nmap               :  python main.py -u https://example.com -p 80,8080,8000
 ```
 
 docker run -it --rm fuzz -u http://testphp.vulnweb.com/artists.php?artist= -w db/sqli.txt -m sqli
+docker run -it --rm fuzz -u https://0ae800b604c6cd9380076c9000180065.web-security-academy.net/?search= -w db/xss.txt -m xss
 docker run -it --rm fuzz -u http://testphp.vulnweb.com -q inurl:"admin"
 docker run -it --rm fuzz -u http://testphp.vulnweb.com/ -w db/dicc.txt
