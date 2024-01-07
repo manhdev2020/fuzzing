@@ -39,3 +39,5 @@ docker run -it --rm fuzz -u http://testphp.vulnweb.com/artists.php?artist= -w db
 docker run -it --rm fuzz -u https://0ae800b604c6cd9380076c9000180065.web-security-academy.net/?search= -w db/xss.txt -m xss
 docker run -it --rm fuzz -u http://testphp.vulnweb.com -q inurl:"admin"
 docker run -it --rm fuzz -u http://testphp.vulnweb.com/ -w db/dicc.txt
+docker run -it --rm fuzz -u http://ec2-23-22-62-156.compute-1.amazonaws.com/#/auth/login/ -w db/dicc.txt
+docker run -it --rm fuzz -u http://testphp.vulnweb.com -p 80,8000,8080

@@ -41,16 +41,19 @@ def get_arguments(): # Hàm này dùng để lấy tham số truyền vào.
 def search_cve(vendor): #Tìm CVE dựa theo tên và phiên bản của server
     print('[*] CVE for server :')
     query = re.findall(r'[a-z0-9.\-]+', vendor) # Tìm cá từ có các chữ viết thường, chữ số, dấu . hoặc - trong vendor, sau đó append vào biến query.
-    url = "https://cve.report/search.php?search={}".format(query[0]) # Url để search CVE dựa theo phiên bản server
-
+    a=query[0]+' '+query[1]
+    url = "https://www.tenable.com/cve/search?q={}".format(a) # Url để search CVE dựa theo phiên bản serve
     r = requests.get(url)
     soup = BeautifulSoup(r.text, 'html.parser')
-
     cve = soup.find_all('a')
     for i in cve:
         c = i.get('title')
+        d = i.get('href')
         if c != None and 'CVE-' in c: #in ra các cve tìm được dựa theo respone trả về 
             print(c)
+        elif d and 'CVE-' in d:
+            cve_number = d.split(r'/')[-1]
+            print(cve_number)
     print("-"*86)
 
 def get_banner(url): # hàm này dùng để lấy banner của url truyền vào.
