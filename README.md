@@ -29,15 +29,15 @@ optional arguments:
                         Query search google_dork.
 
 example:
-SQLi testing       :  python main.py -u http://testphp.vulnweb.com/artists.php?artist= -w db\sqli.txt -m sqli
+SQLi testing       :  python main.py -u http://testphp.vulnweb.com/artists.php?artist= -w db/sqli.txt -m sqli
 Google dorking     :  python main.py -u http://testphp.vulnweb.com/ -q inurl:"admin"
-Fuzzing directory  :  python main.py -u http://testphp.vulnweb.com/ -w db\dicc.txt
+Fuzzing directory  :  python main.py -u http://testphp.vulnweb.com/ -w db/dicc.txt
 Nmap               :  python main.py -u https://example.com -p 80,8080,8000
 ```
 
 docker run -it --rm fuzz -u http://testphp.vulnweb.com/artists.php?artist= -w db/sqli.txt -m sqli
-docker run -it --rm fuzz -u https://0ae800b604c6cd9380076c9000180065.web-security-academy.net/?search= -w db/xss.txt -m xss
+docker run -it --rm fuzz -u https://0a2c009e04e28a4f80d112c500470047.web-security-academy.net/?search= -w db/xss.txt -m xss
 docker run -it --rm fuzz -u http://testphp.vulnweb.com -q inurl:"admin"
 docker run -it --rm fuzz -u http://testphp.vulnweb.com/ -w db/dicc.txt
-docker run -it --rm fuzz -u http://ec2-23-22-62-156.compute-1.amazonaws.com/#/auth/login/ -w db/dicc.txt
+docker run -it --rm fuzz -u http://testphp.vulnweb.com/ -w db/dicc.txt
 docker run -it --rm fuzz -u http://testphp.vulnweb.com -p 80,8000,8080

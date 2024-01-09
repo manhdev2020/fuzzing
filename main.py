@@ -128,8 +128,6 @@ def check_sqli(res, payload): # kiểm tra lỗ hổng sql injection thông qua 
             print("Injectable PostGRES detected,attack string: "+payload)
         elif "ORA" in res.lower():
             print("Injectable Oracle database detected,attack string: "+payload)
-        else:
-            print("---")
 
 def check_xss(res, payload): # kiểm tra lỗ hổng xss thông qua response
     payload = re.findall(r'=.*\w', payload)
